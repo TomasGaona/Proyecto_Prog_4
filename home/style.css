@@ -1,0 +1,325 @@
+/* ==========================================================================
+   Global Styles & Variables
+   ========================================================================== */
+
+:root {
+    --color-text: #e0e0e0;
+    --color-background: #121212;
+    --color-surface: #1e1e1e;
+    --color-primary-accent: #c8a464; /* Gold */
+    --color-secondary-accent: #b40000; /* Crimson */
+    --color-border: #2a2a2a;
+    --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    margin: 0;
+    background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('../images/banner-fate-zero.webp') no-repeat center center fixed; /* Note: background color is hardcoded here to match the gradient */
+    background-size: cover;
+    color: var(--color-text);
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+
+.navbar {
+    background-color: rgba(43, 43, 43, 0.5); /* Translucent background */
+    backdrop-filter: blur(8px); /* Frosted glass effect */
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo {
+    height: 73px;
+    width: auto;
+}
+
+.navbar-links ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.navbar-links ul h2 {
+    font-size: 4rem; /* 'size' is not a valid CSS property. Also, this rule is currently not used. */
+}
+
+.navbar-links ul a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.navbar-links ul > li > a {
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-links ul > li > a:hover {
+    color: var(--color-primary-accent);
+    border-bottom-color: var(--color-secondary-accent);
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(43, 43, 43, 0.9);
+    backdrop-filter: blur(8px);
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    z-index: 1;
+    border-radius: 4px;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+}
+
+.dropdown-content a {
+    padding: 0.75rem 1.5rem;
+    display: block;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    color: var(--color-primary-accent);
+    border-bottom-color: var(--color-secondary-accent);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.hero-section {
+    min-height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 3rem 1rem;
+}
+
+.hero-content {
+    max-width: 960px;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 2rem auto 0 auto;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================================================
+   Main Content & Page Structure
+   ========================================================================== */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Content Row Styling */
+.content-row {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    background-color: var(--color-surface);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-border);
+}
+
+/* Alternating Row */
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.page-title {
+    font-size: 2.5rem;
+
+}
+
+.text-content h2 {
+    font-size: 2.2rem;
+    color: var(--color-primary-accent);
+    margin-top: 0;
+    border-bottom: 2px solid var(--color-secondary-accent);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+}
+
+.image-content {
+    flex: 0 0 40%; /* Image container takes up 40% of the width */
+    max-width: 40%;
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.image-content .img-portrait {
+    height: 354px;
+    width: 250px;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+    background-color: #2b2b2b;
+    color: #888;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+}
+
+.site-footer p {
+    margin: 0.5rem 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-footer a {
+    color: var(--color-primary-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: white;
+}
+
+/* ==========================================================================
+   Responsive Styles (Mobile Navigation)
+   ========================================================================== */
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        background-color: transparent; /* Remove background to blend with mobile nav */
+        box-shadow: none;
+        backdrop-filter: none;
+        padding: 0.5rem 0;
+        margin-top: 0.5rem;
+    }
+ 
+    .dropdown-content.mobile-active {
+        display: block;
+    }
+}
