@@ -54,7 +54,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.querySelectorAll('.dropdown .dropbtn').forEach(dropbtn => {
     dropbtn.addEventListener('click', function (e) {
         // Check if we are in mobile view (matches CSS media query)
-        if (window.matchMedia('(max-width: 600px)').matches) {
+        if (window.matchMedia('(max-width: 768px)').matches) {
             // Prevent default link behavior to stop it from trying to scroll
             e.preventDefault();
 
