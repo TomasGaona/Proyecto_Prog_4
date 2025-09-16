@@ -68,3 +68,24 @@ document.querySelectorAll('.dropdown .dropbtn').forEach(dropbtn => {
         }
     });
 });
+
+/**
+ * Animate content rows on scroll using Intersection Observer.
+ */
+const scrollObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        // If the element is intersecting the viewport, add the 'is-visible' class.
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            // Stop observing the element after it has become visible to save resources.
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1 // Trigger when 10% of the element is visible.
+});
+
+// Find all content rows and tell the observer to watch them.
+document.querySelectorAll('.content-row').forEach(row => {
+    scrollObserver.observe(row);
+});
