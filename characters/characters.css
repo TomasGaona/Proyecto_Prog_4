@@ -60,10 +60,10 @@
 
 .card-content h4 {
     font-size: 1.1rem;
-    color: #c8a464; /* Gold accent for the role */
     margin-top: -1rem;
     margin-bottom: 1.5rem;
     font-weight: 500;
+    color: #c8a464; /* Gold accent for the role */
 }
 
 .card-content p {

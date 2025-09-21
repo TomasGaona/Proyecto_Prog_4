@@ -5,7 +5,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     border: 1px solid #2a2a2a;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 2rem auto;
 }
 
@@ -20,6 +20,16 @@
     margin-bottom: 2.5rem;
     font-size: 1.1rem;
     color: #aaa;
+}
+
+.contact-wrapper {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+.contact-form {
+    flex: 1;
 }
 
 .contact-form .form-group {
@@ -78,4 +88,52 @@
 .submit-btn:hover {
     background-color: #d10000;
     transform: translateY(-2px);
+}
+
+/* Map Styles */
+.map-container {
+    text-align: center;
+    flex: 1;
+}
+
+.map-title {
+    color: #c8a464;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.map-container p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #aaa;
+    text-align: center;
+}
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+    height: 0;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 0;
+}
+
+@media (max-width: 992px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .map-container {
+        margin-top: 3rem;
+        width: 100%;
+    }
 }

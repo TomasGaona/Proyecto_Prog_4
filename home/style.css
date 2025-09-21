@@ -9,11 +9,12 @@
     --color-primary-accent: #c8a464; /* Gold */
     --color-secondary-accent: #b40000; /* Crimson */
     --color-border: #2a2a2a;
-    --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-primary: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 html {
     scroll-behavior: smooth;
+    font-size: 120%; /* Increase base font size for the whole site */
 }
 
 body {
@@ -45,10 +46,11 @@ body {
 
 .logo-container {
     text-align: center;
+    height: 80px; /* 10% increase from 73px */
 }
 
 .logo {
-    height: 73px;
+    height: 100%;
     width: auto;
 }
 
@@ -205,7 +207,7 @@ main {
 
 .page-title {
     font-size: 2.5rem;
-
+    color: #c8a464
 }
 
 .text-content h2 {
@@ -226,6 +228,18 @@ main {
     max-width: 40%;
 }
 
+.image-content-large {
+    /* 20% larger than the default 40% -> 48% */
+    flex: 0 0 48%;
+    max-width: 48%;
+}
+
+.image-content-medium {
+    /* 10% larger than the default 40% -> 44% */
+    flex: 0 0 44%;
+    max-width: 44%;
+}
+
 .image-content img {
     width: 100%;
     height: auto;
@@ -239,6 +253,42 @@ main {
     width: 250px;
     object-fit: cover; /* Ensures image covers the area without distortion */
 }
+
+/* ==========================================================================
+   Font Showcase Section
+   ========================================================================== */
+
+.font-showcase {
+    background-color: var(--color-surface);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--color-border);
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.font-showcase h2 {
+    font-size: 2.2rem;
+    color: var(--color-primary-accent);
+    margin-top: 0;
+    border-bottom: 2px solid var(--color-secondary-accent);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.font-sample {
+    font-size: 2.2rem; /* Matching subtitle size */
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.font-georgia { font-family: Georgia, serif; }
+.font-garamond { font-family: Garamond, serif; }
+.font-cambria { font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+.font-palatino { font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; }
+.font-bookman { font-family: 'Bookman Old Style', serif; }
 
 /* ==========================================================================
    Footer
@@ -306,8 +356,8 @@ main {
         padding: 1rem;
     }
 
-    .logo {
-        height: 60px; /* Slightly smaller logo on mobile */
+    .logo-container {
+        height: 66px; /* 10% increase from 60px */
     }
 
     .toggle-button {
