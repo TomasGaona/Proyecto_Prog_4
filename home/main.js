@@ -89,3 +89,27 @@ const scrollObserver = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('.content-row').forEach(row => {
     scrollObserver.observe(row);
 });
+
+/**
+ * Back to Top button functionality.
+ */
+const backToTopButton = document.getElementById("back-to-top-btn");
+
+if (backToTopButton) {
+    // When the user scrolls down 300px from the top of the document, show the button
+    window.addEventListener('scroll', () => {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    });
+
+    // When the user clicks on the button, scroll to the top of the document
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
